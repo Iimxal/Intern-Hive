@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intern Hive-About Us</title>
+    <link rel="stylesheet" href="/static/about.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+  <%- include('../partials/header') %>
+
+    <div class="main">
+        <section class="section-1">
+            <h2>About Us</h2>
+            <p>
+              Intern Hive is a leading provider of high-quality education and training
+              services. We are committed to creating knowledgeable and skilled
+              professionals who can contribute to the growth and development of their
+              organizations and communities.
+            </p>
+          </section>
+        
+          <section class="section-2">
+            
+          </section>
+  
+          <section class="section-3" id="section-3">
+            <h2>FAQs</h2>
+            <div class="faq">
+              <div class="question">
+                <h3>What is the mission of Intern Hive?</h3>
+                <button class="expand"><ion-icon name="chevron-down-outline"></ion-icon></button>
+              </div>
+              <div class="answer">
+                <p>
+                  The mission of Intern Hive is to provide high-quality education and
+                  training services that enable individuals and organizations to achieve
+                  their full potential.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq">
+              <div class="question">
+                <h3>How do I apply for an internship?</h3>
+                <button class="expand"><ion-icon name="chevron-down-outline"></ion-icon></button>
+              </div>
+              <div class="answer">
+                <p>
+                  To apply for an internship, browse the available listings, select the one you're interested in, and click "Apply Now." Follow the prompts to upload your resume and cover letter.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq">
+              <div class="question">
+                <h3>Can I apply for multiple internships?</h3>
+                <button class="expand"><ion-icon name="chevron-down-outline"></ion-icon></button>
+              </div>
+              <div class="answer">
+                <p>
+                  Yes, you can apply for multiple internships. We encourage you to apply for any positions that match your skills and interests.
+                </p>
+              </div>
+            </div>
+
+
+            <div class="faq">
+              <div class="question">
+                <h3> What types of internships are available?</h3>  <!-- add question here -->
+                <button class="expand"><ion-icon name="chevron-down-outline"></ion-icon></button>
+              </div>
+              <div class="answer">
+                <p>
+                  We offer a variety of internships across different fields such as marketing, engineering, data analysis, finance, and more.<!-- add answer here -->
+                </p>
+              </div>
+            </div>
+
+            <div class="faq">
+              <div class="question">
+                <h3> Can international students apply for internships?</h3>  <!-- add question here -->
+                <button class="expand"><ion-icon name="chevron-down-outline"></ion-icon></button>
+              </div>
+              <div class="answer">
+                <p>
+                  Yes, international students can apply for internships. Please ensure you have the necessary work authorization. <!-- add answer here -->
+                </p>
+              </div>
+            </div>
+
+            <div class="faq">
+              <div class="question">
+                <h3>How can I create an account on Intern Hive? </h3> <!-- add question here -->
+                <button class="expand"><ion-icon name="chevron-down-outline"></ion-icon></button>
+              </div>
+              <div class="answer">
+                <p>
+                  To create an account, click on the "Sign Up" button on the homepage, fill in your details, and follow the prompts to complete the registration process. <!-- add answer here -->
+                </p>
+              </div>
+            </div>
+           
+          </section>
+    </div>
+
+
+    <%- include('../partials/footer') %>
+
+    
+    <script>
+      const faqQuestions = document.querySelectorAll('.faq .question');
+      faqQuestions.forEach(question => {
+          const answer = question.nextElementSibling;
+          const expand = question.querySelector('.expand');
+
+          expand.addEventListener('click', () => {
+              faqQuestions.forEach(q => {
+                  if (q !== question) {
+                      q.classList.remove('active');
+                      q.nextElementSibling.classList.remove('active');
+                  }
+              });
+
+              question.classList.toggle('active');
+              answer.classList.toggle('active');
+
+              if (answer.classList.contains('active')) {
+                  answer.style.height = answer.scrollHeight + 'px';
+              } else {
+                  answer.style.height = '0px';
+              }
+          });
+      });
+  </script>
+        
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Manage Intern Hive</title>
+    <link rel="stylesheet" href="/static/Home.css">
+    <link rel="stylesheet" href="/static/admin.css">
+    <link rel="stylesheet" href="/static/internships.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head> 
+<body>
+    <%- include('../partials/header') %>
+    <main class="main">
+        <div class="admin-main">
+            <div id='addinternshipbtn' class="admin-sec">
+                Add Internship
+            </div>
+            <div id='viewInternship' class="admin-sec">
+                View All Internship
+            </div>
+            <div id='viewFeedback' class="admin-sec">
+                View All Forms
+            </div>
+        </div>
+        
+        <div id="internshipRoot"></div>
+        <!-- <div class="image-container">
+            <div class="slider">
+                <img src="/img/infosys_NBG.webp" alt="Image 1">
+                <img src="/img/Wipro-Logo.webp" alt="Image 2">
+                <img src="/img/tata-consultancy-services-logo.jpg" alt="Image 3">
+                <img src="/img/MPHASIS logo.webp" alt="Image 4">
+                <img src="/img/IBM-logo.webp" alt="Image 5">
+            </div>
+        </div> -->
+        
+    </main>
+    <%- include('../partials/footer') %>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+<script src="/static/admin.js"></script>
+</body>
+
+</html> 

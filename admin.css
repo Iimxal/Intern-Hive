@@ -1,0 +1,17 @@
+
+
+.admin-main{
+    display: flex;
+    width: 100%;
+    background-color: aqua;
+}
+
+.admin-sec{
+    display: flex;
+    width: 250px;
+    height: 100px;
+    background-color: rgb(55, 83, 160);
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+}

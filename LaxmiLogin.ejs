@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Intern Hive -Login Page</title>
+    <link rel="stylesheet" href="/frontend/LaxmiLogin.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+     <script>
+        function resetForm() {
+          document.getElementById("loginForm").reset(); // Resetting the form with ID "loginForm"
+        }
+      </script>
+</head>
+<body>
+    
+    <a href="/" class="back-button">Home</a>
+
+
+    <div class ="wrapper">
+        <span class="bg-animate"></span>
+        <span class="bg-animate2"></span>
+
+        <div class="form-box login">
+            <h2 class="animation" style="--i:0; --j:21;">Login</h2>
+            <form action="">
+                <div class="input-box animation" style="--i:1; --j:22;">
+                    <!-- <input type="text" placeholder="Username"  maxlength="25" required>
+                     <label>Username</label> -->
+                    <!-- <i class='bx bxs-user'></i>  -->
+                    <input id="loginEmail" type="email"  name="email" placeholder="Email"  maxlength="40" required>
+                    <!-- <label>Email </label> -->
+                    <i class='bx bxs-envelope' ></i>
+                </div>
+                <div class="input-box animation" style="--i:2; --j:23;">
+                    <input id="loginPassword" type="password" placeholder="Password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" title="Password must contain at least one letter and one number and be at least 8 characters long"  maxlength="8"  required >
+                    <!-- <input type="checkbox" id="showPassword"> -->
+                    <!-- <label>Password</label> -->
+                    <i class='bx bxs-lock-alt' ></i>
+                </div>
+                <button onclick="login()" class="btn animation" style="--i:3; --j:24;">Login</button>
+                <div class="logreg-link animation"  style="--i:4; --j:25;">
+                    <p> Don't have an account? <a href="#" class="register-link">Sign Up</a></p>
+                </div>
+            </form>
+        </div>
+        <div class="info-text login">
+            <h2 class="animation" style="--i:0; --j:20">Welcome Back!</h2>
+         <p class="animation" style="--i:1; --j:21">Intern Hive provide you internships opportunity.</p>
+        </div>
+        
+            <div class="form-box register">
+                <h2 class="animation"  style="--i:17; --j:0;">Sign Up</h2>
+                <form>
+                    <div class="input-box animation" style="--i:18;  --j:1;">
+                        <input id="username" type="Username"  name="Username" placeholder="Username"  maxlength="25" required>
+                        <!-- <label>Username</label> -->
+                        <i class='bx bxs-user'></i>
+                    </div>
+                    <div class="input-box animation" style="--i:19;  --j:2;">
+                        <input id="email" type="email" name="email" placeholder="Email"  maxlength="40" required>
+                        <!-- <label>Email </label> -->
+                        <i class='bx bxs-envelope' ></i>
+                    </div>
+                    <div class="input-box animation" style="--i:20;  --j:3;">
+                        <input id="password" type="password" placeholder="Password"pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" title="Password must contain at least one letter and one number and be at least 8 characters long"  maxlength="8"  required >
+                        <!-- <label>Password</label> -->
+                        <i class='bx bxs-lock-alt' ></i>
+                    </div>
+                    <button onclick="signup()" class="btn animation" style="--i:21;  --j:4;">Sign Up</button>
+                    <div class="logreg-link animation" style="--i:22;  --j:5;">
+                        <p> Already have an account? <a href="#" class="login-link  ">Login</a></p>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="info-text register">
+                <h2 class="animation" style="--i:17; --j:0;">Welcome Back!</h2>
+                <p class="animation" style="--i:18;  --j:1;">Are you ready to Sign Up.</p>
+            </div>
+            
+    </div>
+    <script src="/frontend/LaxmiLogin.js"></script>
+</body>
+</html>

@@ -1,0 +1,349 @@
+.header{
+    position: sticky;
+    top: 0;
+    margin: auto;
+    z-index: 100;
+    
+}
+
+#menu__toggle {
+    opacity: 0;
+  }
+  #menu__toggle:checked + .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  #menu__toggle:checked + .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0deg);
+  }
+  #menu__toggle:checked + .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #menu__toggle:checked ~ .menu__box {
+    left: -47% !important;
+  }
+  #menu__toggle:not(:checked) ~ .menu__box {
+    left: -100%;
+  }
+  .menu__btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .menu__btn{
+    margin-left: 10px;
+    margin-top: 20px;
+  }
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    background-color: white;
+    transition-duration: .25s;
+    border-radius: 5px;
+    
+    
+  }
+  .menu__btn > span::before {
+    content: '';
+    top: -8px;
+  }
+  .menu__btn > span::after {
+    content: '';
+    top: 8px;
+    
+  }
+  .menu__box {
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 60px;
+    height: 100%;
+    margin: 0;
+    padding: 100px ;
+    list-style: none;
+    background-color: #007acce7;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+    transition-duration: .25s;
+  }
+  .menu__logout{
+    margin-top: 400px;
+    font-family: 'Roboto', sans-serif;
+ }
+  .menu__item {
+    display: flex;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    transition-duration: .25s;
+  }
+  .menu__item:hover {
+    color: #CFD8DC;
+  }
+  .hamburger-menu{
+    width: 23px;
+    height: 0px;
+    
+  } 
+
+.container{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background-color: #007acc;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.container li{
+    margin: 10px 0;
+}
+.container a{
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.logo{
+    margin-top: -3px;
+    position: absolute;
+    padding-left: 70px;
+}
+.logo img{
+    width: 220px;    
+}
+.logo img:hover{
+    cursor: pointer;
+}
+.navbar{
+    background-color: #007acc;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar ul{
+    overflow: auto;
+    margin-left: 42%;
+
+}
+.navbar li{
+    display: flex;
+    padding: 10px;
+    float: left;
+    margin-left: 10px;
+    padding-right: 20px;
+    margin-top: -12px;
+    
+}
+.navbar li a{
+    padding: 12px 4px;
+    float: right;
+    text-decoration: none ;
+    color: white;
+    font-style: normal;
+    font-size: 18px;
+    font-weight: 100;  
+    transition: 0.25s ease-in-out; 
+}
+.navbar li a:hover{
+    color: rgba(0, 0, 0, 0.715);
+    border-bottom: 2px solid black;
+    margin-bottom: -2px;
+    transition: 0.25s ease-in-out;
+    
+}
+.logout ion-icon{
+    color: white;
+    float: right;
+    margin-top: -66px;
+    margin-right: 40px;
+    font-size: 27px;
+    cursor: pointer;
+    padding-left: 10px;
+    transition: 0.3s ease-in-out;
+}
+.logout ion-icon:hover{
+    color: rgba(0, 0, 0,0.715);
+    transform: scale(1.2) translateZ(3px);
+    transition: 0.3s ease-in-out ;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+/*  main body start */
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  .section-1{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 2rem;
+  }
+  .section-2{
+    width: 100%;
+    margin: 2rem auto;
+    text-align: center;
+    margin-bottom: 2rem;
+    border-top: 1px solid #ccc;
+    padding-top: 2rem;
+  }
+  
+  .section-3{
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: center;
+    margin-bottom: 2rem;
+    border-top: 1px solid #ccc;
+    padding-top: 2rem;
+  }
+  
+  .section-2 {
+    position: relative;
+    height: 150px;
+  }    
+  
+ 
+  .faq {
+    margin: 1rem 0;
+  }
+  
+  .faq .question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f2f2f2;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .faq .question:hover {
+    background-color: #e6e6e6;
+  }
+  
+  .faq .question h3 {
+    margin: 0;
+  }
+  
+  .faq .answer {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+  }
+  
+  .faq .expand {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .faq .expand ion-icon {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .faq .expand.active ion-icon {
+    transform: rotate(180deg);
+  }
+  
+  .faq .answer.active {
+    max-height: 100vh;
+  }
+
+/* main body finish */
+
+
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: static;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-logo {
+    flex-basis: 20%;
+    
+  }
+  .footer-logo img{
+    position: relative;
+    height: 70px;
+    margin-top: -100px;
+    margin-left: 20px;
+    padding: none;
+  }
+  
+  .contact-info {
+    flex-basis: 80%;
+    text-align: left;
+    margin-left: 780px;
+    font-size: 16px;
+  }
+  .tagline{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10px;
+  }
+  .tagline p{
+    margin-left: -800px;
+    margin-top: 170px;
+    font-size: 15px;
+  }
+  .social{
+    position: relative;
+    margin-left: 30px;
+  }
+  .social ion-icon{
+    display: inline-block;
+    padding: 8px;
+    margin-top: 12px;
+    color: white;
+    transition: 0.2s ease-in-out;
+  }
+  .social ion-icon:hover{
+    transform: scale(1.5);
+    transition: 0.2s ease-in-out;
+  }

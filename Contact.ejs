@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intern Hive-Contact Us</title>
+    <link rel="stylesheet" href="/static/contact.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <div class="data">
+        <div class="left">
+            <h2>Contact us</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore similique facere velit commodi maxime. Iste est reiciendis assumenda esse eveniet!</p>
+        </div>
+        <div class="clg-img">
+            <img src="/img/collegedcedu.png" alt="image 1">
+            <img src="/img/students.jpg" alt="image 2">
+            <img src="/img/B.ed.jpg" alt="image 3">
+        </div>
+        <div class="right">
+            <div class="form-container">
+                <h2>Send__Message?</h2>
+                <form class="contact-form" onsubmit="event.preventDefault(); sendFeedback()" method="post">
+                  <div class="form-field message">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" cols="50" required></textarea>
+                  </div>
+                  <div class="form-field">
+                    <input type="submit" value="Send">
+                  </div>
+                </form>
+              </div>
+              <div class="blur-bg"></div>
+        </div>
+    </div>
+
+    <div class="other-contact" id="other-contacts">
+        <div class="left">
+        <h2>Other Methods</h2>
+        <ion-icon name="call-outline"></ion-icon></a>
+        <ion-icon name="mail-outline"></ion-icon></a>
+        <ion-icon name="globe-outline"></ion-icon></a>
+        <ion-icon name="location-outline"></ion-icon></a>
+        
+        <p>94180 39736 , 94185 63328 , 94186 76294</p>
+        <p>dronacharyahp@gmail.com</p>
+        <p>www.dcedu.in</p>
+        <p>Dronacharya PG College of Education V.P.O Rait, Tehsil Shahpur, District Kangra, Himachal Pradesh, Pin:176208</p>
+        </div>
+        
+        <div class="right">
+            <h2>Social Media</h2>
+            <ion-icon name="logo-youtube"></ion-icon></a>
+            <ion-icon name="logo-instagram"></ion-icon></a>
+            <ion-icon name="logo-facebook"></ion-icon></a>
+
+            <p>www.youtube.com/@dronacharyapgcollegeofeduc284</p>
+            <p>www.instagram.com/dronacharyapgcollege/</p>
+            <p>www.facebook.com/dronacharyapgcollege/</p>
+        </div>
+    </div>
+
+    <div class="map-container">
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3376.48286814164!2d76.2043802750071!3d32.191217013693624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391b5ba63863eac5%3A0x3e9fc7b44c7a0beb!2sDronacharya%20PG%20College%20of%20Education!5e0!3m2!1sen!2sin!4v1707198848872!5m2!1sen!2sin" width="800" height="310px" style="border:1px solid rgba(128, 128, 128, 0.838);" allowfullscreen="" loading="" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <%- include('../partials/footer') %>
+
+
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+    <script>
+        async function sendFeedback(){
+            const token = localStorage.getItem("Authtoken");
+
+            if (!token){
+                await Swal.fire({
+                title: "Not Logged In",
+                text: "Please Log in first",
+                icon: "error"
+            })
+            return
+            }
+
+            const message = document.getElementById('message')
+            let result = await fetch('/api/contactus',{
+                method:'POST',
+                headers:{
+                    'Content-Type':'application/json',
+                    'auth':token
+                },
+                body:JSON.stringify({
+                    message:message.value
+                })
+            })
+            result = await result.json()
+            console.log(result)
+            if (result.success) {
+                Swal.fire({
+                title: "Great",
+                text: result?.message,
+                icon: "success"
+            });
+                email.value = ''
+                message.value = ''
+            } else {
+                Swal.fire({
+                title: "Oops...",
+                text: result?.err,
+                icon: "error"
+            })
+        }
+        }
+    </script>
+</body>
+</html>

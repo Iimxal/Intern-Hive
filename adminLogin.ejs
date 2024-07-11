@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Intern Hive -Login Page</title>
+    <link rel="stylesheet" href="/static/Login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    
+    <a href="/" class="back-button">Home</a>
+
+
+    <div class ="wrapper">
+        <span class="bg-animate"></span>
+        <span class="bg-animate2"></span>
+
+        <div class="form-box login">
+            <h2 class="animation" style="--i:0; --j:21;">Admin Login</h2>
+            <form id="loginForm" onsubmit="event.preventDefault(); login()">
+                <div class="input-box animation" style="--i:1; --j:22;">
+                    
+                    <input id="loginEmail" type="email"  name="email" placeholder="Email"  maxlength="40" required>
+
+                    <i class='bx bxs-envelope' ></i>
+                </div>
+                <div class="input-box animation" style="--i:2; --j:23;">
+                    <input id="loginPassword" type="password" placeholder="Password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" title="Password must contain at least one letter and one number and be at least 8 characters long"  maxlength="8"  required >
+                    <i class='bx bxs-lock-alt' ></i>
+                </div>
+                <button type="submit" class="btn animation" style="--i:3; --j:24;">Login</button>
+            </form>
+        </div>
+        <div class="info-text login">
+            <h2 class="animation" style="--i:0; --j:20">Welcome Admin!</h2>
+         <p class="animation" style="--i:1; --j:21">Manage the site here!.</p>
+        </div>
+        
+            
+            <div class="info-text register">
+                <h2 class="animation" style="--i:17; --j:0;">Welcome Back!</h2>
+                <p class="animation" style="--i:18;  --j:1;">Are you ready to Sign Up.</p>
+            </div>
+            
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+    <script src="/static/Login.js"></script>
+</body>
+</html>
